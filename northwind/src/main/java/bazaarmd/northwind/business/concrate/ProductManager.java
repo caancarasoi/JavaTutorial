@@ -26,9 +26,6 @@ public class ProductManager implements ProductService{
 		this.productDao = productDao;
 	}
 	
-	
-	 
-
 	@Override
 	public DataResult<List<Product>> getAll() {
 		// TODO Auto-generated method stub
