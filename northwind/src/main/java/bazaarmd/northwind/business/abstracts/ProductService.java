@@ -3,10 +3,13 @@ package bazaarmd.northwind.business.abstracts;
 
 import java.util.List;
 
+
 import org.springframework.data.jpa.repository.Query;
 
 import bazaarmd.northwind.core.utilities.results.DataResult;
 import bazaarmd.northwind.entities.concrate.Product;
+import bazaarmd.northwind.entities.dtos.ProductWithCategoryDto;
+
 
 public interface ProductService {
 	 
@@ -27,4 +30,6 @@ public interface ProductService {
 		//query yazarken Product tablo deıl entity adı olacak
 		@Query("From Product where productName=:productName and categoryId=:categoryId")
 		DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
+		
+		DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(); 
 }

@@ -11,6 +11,7 @@ import bazaarmd.northwind.core.utilities.results.DataResult;
 import bazaarmd.northwind.core.utilities.results.SuccessDataResult;
 import bazaarmd.northwind.dataAccess.abstracts.ProductDao;
 import bazaarmd.northwind.entities.concrate.Product;
+import bazaarmd.northwind.entities.dtos.ProductWithCategoryDto;
 
 
 
@@ -86,6 +87,12 @@ public class ProductManager implements ProductService{
 		// TODO Auto-generated method stub
 		return new SuccessDataResult<List<Product>>
 		(this.productDao.getByNameAndCategory(productName,categoryId),"Data Listelendi...");
+	}
+
+	@Override
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<ProductWithCategoryDto>>(this.productDao.getProductWithCategoryDetails(),"Data Listelend");
 	}
 	
 	
